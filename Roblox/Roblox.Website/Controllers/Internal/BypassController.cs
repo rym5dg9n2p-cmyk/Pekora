@@ -691,6 +691,20 @@ namespace Roblox.Website.Controllers
             return Content(await System.IO.File.ReadAllTextAsync("hor.txt"), "text/plan");
         }
 
+        //NOTE FROM SKYLER: In under no circumstances this endpoint should be removed.
+		[HttpGetBypass("web/source-identification")]
+		public IActionResult SourceCodeIdentification()
+		{
+   			 var baseUrl = Configuration.BaseUrl ?? "unknown";
+    	 	 var response = $"""
+	 	 	 MARINE / OpenPekora (by Skyler's Fridge)
+			 https://github.com/SkylerClockYT/OpenPekora
+	 	 	 Licensed under Apache-2.0.
+	 	 	 Base URL: {baseUrl}
+	 	 	 """;
+             return Content(response, "text/plain");
+        }
+
         //this is for the newer years that dont have a custom monitoring script
         [HttpPostBypass("presence/register-game-presence")]
         public async Task<dynamic> RegisterGamePresence(long visitorId, long placeId, Guid gameId, string locationType)
