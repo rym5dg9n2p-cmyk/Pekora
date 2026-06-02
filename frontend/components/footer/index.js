@@ -84,7 +84,7 @@ const Footer = props => {
           })
         }
       </ul>
-      <p className={s.footerNote}>©2025 Marine. Marine is not affliated with Roblox Corporation.</p>
+      <p className={s.footerNote}>©2025 Marine. Marine is not affliated with Roblox Corporation. | 2025 OpenPekora (by Skyler's Fridge)</p>
     </div>
   </footer>
 
